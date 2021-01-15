@@ -37,7 +37,7 @@ namespace SeleniumTesty
             }
         }
         [Test]
-        public void Test1()
+        public void Test1_brakDopuszczenia()//Sprawdzenie poprawności blokady wieku mniej niż 10 lat
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -55,7 +55,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Brak kwalifikacji", alertText);
         }
         [Test]
-        public void Test2()
+        public void Test2_grupaMlodzik()//Sprawdzenie poprawności przydziału wieku 10 lat
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -73,7 +73,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Mlodzik", alertText);
         }
         [Test]
-        public void Test3()
+        public void Test3_grupaMlodzik()//Sprawdzenie poprawności przydziału wieku 10 < X < 14 lat
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -91,7 +91,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Mlodzik", alertText);
         }
         [Test]
-        public void Test4()
+        public void Test4_grupaJunior()//Sprawdzenie poprawności przydziału wieku 14 lat
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -109,7 +109,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Junior", alertText);
         }
         [Test]
-        public void Test5()
+        public void Test5_grupaJunior()//Sprawdzenie poprawności przydziału wieku 14 < X < 18 lat
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -127,7 +127,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Junior", alertText);
         }
         [Test]
-        public void Test6()
+        public void Test6_grupaDorosly()//Sprawdzenie poprawności przydziału wieku 18 lat
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -143,7 +143,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Dorosly", alertText);
         }
         [Test]
-        public void Test7()
+        public void Test7_grupaDorosly()//Sprawdzenie poprawności przydziału wieku 18 < X < 65 lat
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -159,7 +159,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Dorosly", alertText);
         }
         [Test]
-        public void Test8()
+        public void Test8_grupaSenior()//Sprawdzenie poprawności przydziału wieku 65 lat
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -176,7 +176,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Senior", alertText);
         }
         [Test]
-        public void Test9()
+        public void Test9_grupaSenior()//Sprawdzenie poprawności przydziału wieku większego niż 66 lat
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -193,7 +193,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Senior", alertText);
         }
         [Test]
-        public void Test10()
+        public void Test10_wymaganiaMlodzik()//Sprawdzenie wymagania ( Zgoda rodzica = T i Zaświadczenie od lekarza = F) dla osób w wieku 10
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -210,7 +210,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test11()
+        public void Test11_wymaganiaMlodzik()//Sprawdzenie wymagania ( Zgoda rodzica = F i Zaświadczenie od lekarza = T ) dla osób w wieku 10
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -227,7 +227,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test12()
+        public void Test12_wymaganiaJunior()//Sprawdzenie wymagania ( Zgoda rodzica = T i Zaświadczenie od lekarza = F) dla osób w wieku 14
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -244,7 +244,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test13()
+        public void Test13_wymaganiaJunior()//Sprawdzenie wymagania ( Zgoda rodzica = F i Zaświadczenie od lekarza = T ) dla osób w wieku 14
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -261,7 +261,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test14()
+        public void Test14_wymaganiaDorosly()//Sprawdzenie wymagania ( Zgoda rodzica = T i Zaświadczenie od lekarza = F ) dla osób w wieku 18
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -278,7 +278,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Dorosly", alertText);
         }
         [Test]
-        public void Test15()
+        public void Test15_wymaganiaDorosly()//Sprawdzenie wymagania ( Zgoda rodzica = F i Zaświadczenie od lekarza = T ) dla osób w wieku 18
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -295,7 +295,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Dorosly", alertText);
         }
         [Test]
-        public void Test16()
+        public void Test16_wymaganiaSenior()//Sprawdzenie wymagania ( Zgoda rodzica = T i Zaświadczenie od lekarza = T) dla osób w wieku 65
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -313,7 +313,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Senior", alertText);           
         }
         [Test]
-        public void Test17()
+        public void Test17_wymaganiaSenior()//Sprawdzenie wymagania ( Zgoda rodzica = T i Zaświadczenie od lekarza = F ) dla osób w wieku 65
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -330,7 +330,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test18()
+        public void Test18_wiekZero()//Sprawdzenie poprawności walidacji wieku pod kątem zera
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -338,7 +338,7 @@ namespace SeleniumTesty
             driver.FindElement(By.Id("inputPassword3")).Clear();
             driver.FindElement(By.Id("inputPassword3")).SendKeys("Rudek");
             driver.FindElement(By.Id("dataU")).Clear();
-            driver.FindElement(By.Id("dataU")).SendKeys("27-11-2020");
+            driver.FindElement(By.Id("dataU")).SendKeys("15-01-2021");
             driver.FindElement(By.Id("rodzice")).Click();
             driver.FindElement(By.Id("lekarz")).Click();
             driver.FindElement(By.XPath("//button[@type='button']")).Click();
@@ -348,7 +348,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test19()
+        public void Test19_wiekuUjemny()//Sprawdzenie poprawności walidacji wieku pod kątem ujemnego wieku
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -366,7 +366,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test20()
+        public void Test20_wiek150()//Sprawdzenie poprawności walidacji wieku pod kątem bardzo wysokich liczb
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -384,7 +384,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test21()
+        public void Test21_walidacja()//Sprawdzenie poprawności walidacji pól pod kontem wpisywania do liczb
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -402,7 +402,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test22()
+        public void Test22_walidacja()//Sprawdzenie poprawności walidacji pól pod kontem wpisywania znaków i liczb
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -420,7 +420,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test23()
+        public void Test23_walidacja()//Sprawdzenie poprawności walidacji pól pod kontem SQL injection
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -438,7 +438,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test24()
+        public void Test24_walidacja()//Sprawdzenie poprawności walidacji pól pod kontem skryptów JS
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -456,7 +456,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test25()
+        public void Test25_walidacja()//Sprawdzenie poprawności walidacji pól pod kontem wpisywania do liczb
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -474,7 +474,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test26()
+        public void Test26_walidacja()//Sprawdzenie poprawności walidacji pól pod kontem wpisywania znaków i liczb
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -492,7 +492,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test27()
+        public void Test27_walidacja()//Sprawdzenie poprawności walidacji pól pod kontem SQL injection
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -510,7 +510,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test28()
+        public void Test28_walidacja()//Sprawdzenie poprawności walidacji pól pod kontem skryptów JS
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -528,7 +528,7 @@ namespace SeleniumTesty
             Assert.AreEqual("Blad danych", alertText);
         }
         [Test]
-        public void Test29()
+        public void Test29_walidacja()//Sprawdzenie poprawności walidacji pól pod kontem braku danych
         {
             driver.Navigate().GoToUrl("https://lamp.ii.us.edu.pl/~mtdyd/zawody/?");
             driver.FindElement(By.Id("inputEmail3")).Clear();
@@ -540,7 +540,6 @@ namespace SeleniumTesty
             driver.FindElement(By.Id("rodzice")).Click();
             driver.FindElement(By.Id("lekarz")).Click();
             driver.FindElement(By.XPath("//button[@type='button']")).Click();
-            driver.SwitchTo().Alert().Accept();
             string alertText = driver.SwitchTo().Alert().Text;
             driver.SwitchTo().Alert().Accept();
             Assert.AreEqual("First name must be filled out", alertText);
